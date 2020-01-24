@@ -10,8 +10,8 @@ node ('ubuntu-app-atgent'){
 
     
     stage('Build-and-Tag') {
-     This builds the actual image; synonymous to
-         * docker build on the command line */
+    /* This builds the actual image; synonymous to
+          docker build on the command line */
         sh 'echo build and tag'
         app = docker.build("alexanderbergmann/devsecops")*/
     }
