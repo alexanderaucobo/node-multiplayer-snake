@@ -1,5 +1,5 @@
 node ('ubuntu-app-atgent'){  
-    //def app
+   def app
     stage('Cloning Git') {
         /* Let's make sure we have the repository cloned to our workspace */
        checkout scm
@@ -10,16 +10,16 @@ node ('ubuntu-app-atgent'){
 
     
     stage('Build-and-Tag') {
-    /* This builds the actual image; synonymous to
+     This builds the actual image; synonymous to
          * docker build on the command line */
         sh 'echo build and tag'
-    /*    app = docker.build("alexanderbergmann/devsecops")*/
+        app = docker.build("alexanderbergmann/devsecops")*/
     }
     stage('Post-to-dockerhub') {
     sh 'echo post to docker'
-    /* docker.withRegistry('https://registry.hub.docker.com', 'training_creds') {
+     docker.withRegistry('https://registry.hub.docker.com', 'training_creds') {
             app.push("latest")
-        			}*/
+        			}
          }
    /* stage('SECURITY-IMAGE-SCANNER'){
         build 'SECURITY-IMAGE-SCANNER-AQUAMICROSCANNER'
@@ -28,8 +28,8 @@ node ('ubuntu-app-atgent'){
     
     stage('Pull-image-server') {
     sh 'echo pull image'
-       /*  sh "docker-compose down"
-         sh "docker-compose up -d"	*/
+         sh "docker-compose down"
+         sh "docker-compose up -d"
       }
     
    stage('DAST')
