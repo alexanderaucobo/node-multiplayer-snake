@@ -12,11 +12,11 @@ node ('ubuntu-app-atgent'){
     stage('Build-and-Tag') {
     /* This builds the actual image; synonymous to
           docker build on the command line */
-        sh 'echo build and tag'
+        
         app = docker.build("alexanderbergmann/devsecops")*/
     }
     stage('Post-to-dockerhub') {
-    sh 'echo post to docker'
+    
      docker.withRegistry('https://registry.hub.docker.com', 'training_creds') {
             app.push("latest")
         			}
@@ -27,7 +27,7 @@ node ('ubuntu-app-atgent'){
   
     
     stage('Pull-image-server') {
-    sh 'echo pull image'
+    
          sh "docker-compose down"
          sh "docker-compose up -d"
       }
