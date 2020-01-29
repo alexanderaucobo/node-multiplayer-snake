@@ -5,7 +5,7 @@ node ('ubuntu-app-atgent'){
        checkout scm
     }  
     stage('SAST'){
-        build 'SECURITY-SAST-SNYK'
+       /* build 'SECURITY-SAST-SNYK' */
     }
 
     
@@ -21,7 +21,7 @@ node ('ubuntu-app-atgent'){
         			}
          }
     stage('SECURITY-IMAGE-SCANNER'){
-        build 'SECURITY-IMAGE-SCANNER-AQUAMICROSCANNER'
+       /* build 'SECURITY-IMAGE-SCANNER-AQUAMICROSCANNER' */
     }
   
     
@@ -33,7 +33,7 @@ node ('ubuntu-app-atgent'){
     
     stage('DAST')
         {
-        build 'SECURITY-DAST-OWASP_ZAP'
+      /*  build 'SECURITY-DAST-OWASP_ZAP' */
         }
  
 }
