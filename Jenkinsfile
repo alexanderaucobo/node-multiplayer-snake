@@ -34,7 +34,7 @@ node ('ubuntu-app-atgent'){
     
     stage('DAST')
         {
-        build 'SECURITY-DAST-OWASP_ZAP' 
+        build 'SECURITY-DAST-OWASP-ZAP' 
         build 'Security-DAST-Arachni'
         }
  
